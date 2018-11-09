@@ -11,11 +11,10 @@ class CommentsController extends Controller
     public function newComment(CommentFormRequest $request)
     {
     	$comment = new Comment(array(
-    		'post_id' => $request->get('post_id'),l
+    		'post_id' => $request->get('post_id'),
     		'content' => $request->get('content')
     		));
     	$comment->save();
-
     	return redirect()->route('tickets.index')->with('status', 'Your comment has been created!');
     }
 
